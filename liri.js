@@ -9,6 +9,7 @@ var item = process.argv[3];
 var spotify = new Spotify(keys.spotify);
 var fs = require("fs");
 
+
 if(command === "spotify-this-song") {
     if(!item) {
         item = "First Date";
@@ -69,9 +70,9 @@ if(command === "do-what-it-says") {
 
         var array = data.split(",");
 
-        name = array[1]
+        item = array[1]
 
-        spotify.search({type: "track", query: name, limit: 1}, function(err, data) {
+        spotify.search({type: "track", query: item, limit: 1}, function(err, data) {
             if(err) {
                 return console.log("Error ocurred: " + err);
             }
